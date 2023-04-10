@@ -6,7 +6,8 @@ import { useEffect } from 'react';
 function App() {
 
   useEffect(() => {
-    let url = 'https://api.themoviedb.org/3/list/1?api_key=264bb09ec4d858065cfb8860838a32ff&page=1'
+    let api_key = ''
+    let url = 'https://api.themoviedb.org/3/list/1?api_key=' + api_key + '&page=1'
     
     axios.get(url).then((data) => {
       console.log(data);
