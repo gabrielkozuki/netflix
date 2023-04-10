@@ -2,12 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import { useEffect } from 'react';
+import getMovies from './api.js'
 
 function App() {
 
   useEffect(() => {
-    let api_key = ''
-    let url = 'https://api.themoviedb.org/3/list/1?api_key=' + api_key + '&page=1'
+    let url = getMovies('documentaries')
     
     axios.get(url).then((data) => {
       console.log(data);
