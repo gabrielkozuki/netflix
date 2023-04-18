@@ -1,21 +1,19 @@
-import React, {useEffect} from   'react'
+import { useState, useEffect } from   'react'
 import { getMovies } from '../api';
 import './Row.css'
 
 const imageHost = "https://image.tmdb.org/t/p/original";
 
 const Row = ({title, path, isLarge}) => {
-    const [movies, setMovies] = React.useState([])
+    const [movies, setMovies] = useState([])
 
     const fetchMovies = async (_path) => {
        try {
         const data = await getMovies(_path);
-
         setMovies(data?.results)
-        console.log(data)
 
-       } catch(error) {
-        console.log('error Row: ', error)
+       } catch(err) {
+        console.log('error Row: ', err)
        }
 
     }
@@ -33,7 +31,7 @@ const Row = ({title, path, isLarge}) => {
                 <img
                   className={`movie-card ${isLarge && "movie-card-large"}` }
                   key={movie.id} 
-                  src={imageHost + movie.poster_path} 
+                  src={imageHost + (isLarge ? movie.backdrop_path : movie.poster_path)} 
                   alt={movie.name} >
               </img>)
             } )}

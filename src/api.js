@@ -46,8 +46,9 @@ export const getMovies = async(path) => {
         const res = fetch(url)
 
         return (await res).json()
+        
     } catch(err) {
-        console.log(err);
+        console.log('error API: ', err);
     }
 }
 
