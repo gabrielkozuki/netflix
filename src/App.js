@@ -2,11 +2,13 @@ import './App.css';
 import Row from './components/Row'
 import Banner from './components/Banner'
 import { categories } from './api';
+import Nav from './components/Nav';
 
   const App = () => {
 
     return (
       <div className="App">
+        <Nav />
         <Banner />
         {categories.map( (category) => {
           return <Row 
