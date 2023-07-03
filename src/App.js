@@ -1,26 +1,13 @@
-import './App.css';
-import Row from './components/Row'
-import Banner from './components/Banner'
-import { categories } from './api';
-import Nav from './components/Nav';
+import { Outlet } from 'react-router-dom'
+import './App.css'
 
-  const App = () => {
+function App() {
 
-    return (
-      <div className="App">
-        <Nav />
-        <Banner />
-        {categories.map( (category) => {
-          return <Row 
-                    key={category.name} 
-                    title={category.title} 
-                    path={category.path}
-                    isLarge={category.isLarge}
-                  />
-        } )}
-  
-      </div>
-    );
+  return (
+    <div className="App">
+      <Outlet />
+    </div>
+  )
 }
 
-export default App;
+export default App
