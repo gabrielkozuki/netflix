@@ -6,23 +6,27 @@ function Login() {
 
     const navigateTo = useNavigate()
 
+    function entrar() {
+        navigateTo('/')
+    }
+
     return (
         <div className="login">
-            <div class="form">
-                <div class="title">Login</div>
-                <div class="subtitle">Faça login com suas credenciais ou <u onClick={() => navigateTo('/cadastro')}>CADASTRE-SE</u></div>
+            <div className="form">
+                <div className="title">Login</div>
+                <div className="subtitle">Faça login com suas credenciais ou <u onClick={() => navigateTo('/cadastro')}>CADASTRE-SE</u></div>
 
-                <div class="input-container ic1">
-                    <input id="email" class="input" type="text" placeholder=" " />
-                    <div class="cut"></div>
-                    <label for="email" class="placeholder">E-mail</label>
+                <div className="input-container ic1">
+                    <input id="email" className="input" type="text" placeholder=" " />
+                    <div className="cut"></div>
+                    <label htmlFor="email" className="placeholder">E-mail</label>
                 </div>
-                <div class="input-container ic2">
-                    <input id="senha" class="input" type="text" placeholder=" " />
-                    <div class="cut cut-short"></div>
-                    <label for="senha" class="placeholder">Senha</label>
+                <div className="input-container ic2">
+                    <input id="senha" className="input" type="text" placeholder=" " />
+                    <div className="cut cut-short"></div>
+                    <label htmlFor="senha" className="placeholder">Senha</label>
                 </div>
-                <button type="text" class="submit">Entrar</button>
+                <button type="text" className="submit" onClick={() => { entrar() }}>Entrar</button>
             </div>
         </div>
   )

@@ -17,7 +17,25 @@
 
 .nav-avatar {
     position: fixed;
-    right: 20px;
+    right: 115px;
     width: 30px;
+    object-fit: contain;
+}
+
+.btn-logout {
+    background-color: #E50914;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 14px;
+    height: 32px;
+    outline: 0;
+    text-align: center;
+
+    position: fixed;
+    right: 10px;
+    width: 80px;
     object-fit: contain;
 }

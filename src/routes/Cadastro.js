@@ -1,40 +1,47 @@
 
 import './Cadastro.scss'
+import { useNavigate } from 'react-router-dom';
 
 function Cadastro() {
 
+    const navigateTo = useNavigate()
+
+    function cadastrar() {
+        navigateTo('/login')
+    }
+
     return (
         <div className="cadastro">
-            <div class="form">
-                <div class="title">Cadastro</div>
-                <div class="subtitle">Insira suas credenciais abaixo:</div>
+            <div className="form">
+                <div className="title">Cadastro</div>
+                <div className="subtitle">Insira suas credenciais abaixo:</div>
 
-                <div class="input-container ic1">
-                    <input id="nome" class="input" type="text" placeholder=" " />
-                    <div class="cut"></div>
-                    <label for="nome" class="placeholder">Nome</label>
+                <div className="input-container ic1">
+                    <input id="nome" className="input" type="text" placeholder=" " />
+                    <div className="cut cut-short"></div>
+                    <label htmlFor="nome" className="placeholder">Nome</label>
                 </div>
-                <div class="input-container ic2">
-                    <input id="idade" class="input" type="text" placeholder=" " />
-                    <div class="cut"></div>
-                    <label for="idade" class="placeholder">Idade</label>
+                <div className="input-container ic2">
+                    <input id="idade" className="input" type="text" placeholder=" " />
+                    <div className="cut cut-short"></div>
+                    <label htmlFor="idade" className="placeholder">Idade</label>
                 </div>
-                <div class="input-container ic2">
-                    <input id="email" class="input" type="text" placeholder=" " />
-                    <div class="cut"></div>
-                    <label for="email" class="placeholder">E-mail</label>
+                <div className="input-container ic2">
+                    <input id="email" className="input" type="text" placeholder=" " />
+                    <div className="cut cut-short"></div>
+                    <label htmlFor="email" className="placeholder">E-mail</label>
                 </div>
-                <div class="input-container ic2">
+                <div className="input-container ic2">
                     <input id="senha" class="input" type="text" placeholder=" " />
                     <div class="cut cut-short"></div>
-                    <label for="senha" class="placeholder">Senha</label>
+                    <label htmlFor="senha" class="placeholder">Senha</label>
                 </div>
                 <div class="input-container ic2">
                     <input id="confirmarsenha" class="input" type="text" placeholder=" " />
-                    <div class="cut cut-short"></div>
-                    <label for="confirmarsenha" class="placeholder">Confirmar senha</label>
+                    <div class="cut"></div>
+                    <label htmlFor="confirmarsenha" class="placeholder">Confirmar senha</label>
                 </div>
-                <button type="text" class="submit">Cadastrar</button>
+                <button type="text" class="submit" onClick={() => { cadastrar() }}>Cadastrar</button>
             </div>
         </div>
     )
