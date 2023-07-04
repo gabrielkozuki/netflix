@@ -56,3 +56,37 @@ export const getMovies = async(path) => {
     }
 }
 
+export const fazerLogin = async(user) => {
+    try {
+        let url = API_DNS + '/login'
+        const res = fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+
+        return (await res).json()
+        
+    } catch(err) {
+        console.log('error login: ', err);
+    }
+}
+
+export const fazerCadastro = async(user) => {
+    try {
+        let url = API_DNS + '/cadastro'
+        const res = fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: user
+        })
+
+        return await res
+        
+    } catch(err) {
+        console.log('error cadastro: ', err);
+    }
+}
