@@ -1,4 +1,4 @@
-import './Home.css';
+import './Home.scss';
 import Row from '../components/Row'
 import Banner from '../components/Banner'
 import { categories } from '../api';
