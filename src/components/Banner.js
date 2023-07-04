@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react'
 import './Banner.css'
 import {categories, getMovies } from '../api';
 
-function Banner() {
+function Banner({sessionID}) {
     const [movie, setMovie] = useState({});
 
     const fetchRandomMovie = async () => {
@@ -11,7 +11,7 @@ function Banner() {
                 (category) => category.name === "netflixOriginals"
             )
 
-            const data = await getMovies(netflixOriginalsCategory.path)
+            const data = await getMovies(netflixOriginalsCategory.path, sessionID)
             const movies = data?.results
             const randomIndex = Math.floor(Math.random() * movies.length)
             setMovie(movies[randomIndex])

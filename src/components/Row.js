@@ -4,12 +4,12 @@ import './Row.css'
 
 const imageHost = "https://image.tmdb.org/t/p/original";
 
-const Row = ({title, path, isLarge}) => {
+const Row = ({title, path, isLarge, sessionID}) => {
     const [movies, setMovies] = useState([])
 
     const fetchMovies = async (_path) => {
        try {
-        const data = await getMovies(_path);
+        const data = await getMovies(_path, sessionID);
         setMovies(data?.results)
 
        } catch(err) {

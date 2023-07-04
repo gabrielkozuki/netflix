@@ -8,11 +8,10 @@ import Nav from '../components/Nav';
 
   const Home = () => {
     const navigateTo = useNavigate()
-    const location = useLocation();
+    const location = useLocation()
+    const sessionID = location.state ? location.state.sessionID : ''
 
     async function autenticacao() {
-      let sessionID = location.state ? location.state.sessionID : ''
-      debugger
       let res = await authTeste({'sessionID': sessionID})
 
       if (res.codigo) {
@@ -28,13 +27,14 @@ import Nav from '../components/Nav';
     return (
       <div className="Home">
         <Nav />
-        <Banner />
+        <Banner sessionID={sessionID} />
         {categories.map( (category) => {
           return <Row 
                     key={category.name} 
                     title={category.title} 
                     path={category.path}
                     isLarge={category.isLarge}
+                    sessionID={sessionID}
                   />
         } )}
   
