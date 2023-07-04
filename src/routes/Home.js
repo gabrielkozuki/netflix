@@ -27,14 +27,13 @@ import Nav from '../components/Nav';
     return (
       <div className="Home">
         <Nav />
-        <Banner sessionID={sessionID} />
+        <Banner />
         {categories.map( (category) => {
           return <Row 
                     key={category.name} 
                     title={category.title} 
                     path={category.path}
                     isLarge={category.isLarge}
-                    sessionID={sessionID}
                   />
         } )}
   

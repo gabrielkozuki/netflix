@@ -39,16 +39,13 @@ export const categories = [
     }
 ]
 
-export const getMovies = async(path, sessionID) => {
+export const getMovies = async(path) => {
     try {
         let url = API_DNS + path
         const res = fetch(url, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
-            },
-            body: {
-                'sessionID': sessionID
             }
         })
 
