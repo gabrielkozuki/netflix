@@ -32,12 +32,12 @@ function Cadastro() {
                     <label htmlFor="email" className="placeholder">E-mail</label>
                 </div>
                 <div className="input-container ic2">
-                    <input id="senha" class="input" type="text" placeholder=" " />
+                    <input id="senha" class="input" type="password" placeholder=" " />
                     <div class="cut cut-short"></div>
                     <label htmlFor="senha" class="placeholder">Senha</label>
                 </div>
                 <div class="input-container ic2">
-                    <input id="confirmarsenha" class="input" type="text" placeholder=" " />
+                    <input id="confirmarsenha" class="input" type="password" placeholder=" " />
                     <div class="cut"></div>
                     <label htmlFor="confirmarsenha" class="placeholder">Confirmar senha</label>
                 </div>

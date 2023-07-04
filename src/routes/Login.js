@@ -22,7 +22,7 @@ function Login() {
                     <label htmlFor="email" className="placeholder">E-mail</label>
                 </div>
                 <div className="input-container ic2">
-                    <input id="senha" className="input" type="text" placeholder=" " />
+                    <input id="senha" className="input" type="password" placeholder=" " />
                     <div className="cut cut-short"></div>
                     <label htmlFor="senha" className="placeholder">Senha</label>
                 </div>
