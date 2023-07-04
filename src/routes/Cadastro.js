@@ -21,7 +21,7 @@ function Cadastro() {
 
         let res = await fazerCadastro(user)
 
-        if (res === '200') {
+        if (res === 200) {
             alert('Cadastro efetuado com sucesso!')
             navigateTo('/login')
         } else {

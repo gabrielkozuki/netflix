@@ -56,6 +56,24 @@ export const getMovies = async(path) => {
     }
 }
 
+export const authTeste = async(user) => {
+    try {
+        let url = API_DNS + '/test'
+        const res = fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(user)
+        })
+
+        return (await res).json()
+        
+    } catch(err) {
+        console.log('error auth: ', err);
+    }
+}
+
 export const fazerLogin = async(user) => {
     try {
         let url = API_DNS + '/login'
@@ -63,7 +81,8 @@ export const fazerLogin = async(user) => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
-            }
+            },
+            body: JSON.stringify(user)
         })
 
         return (await res).json()
@@ -81,10 +100,10 @@ export const fazerCadastro = async(user) => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: user
+            body: JSON.stringify(user)
         })
 
-        return await res
+        return (await res).json()
         
     } catch(err) {
         console.log('error cadastro: ', err);
