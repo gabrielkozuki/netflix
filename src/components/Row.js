@@ -10,7 +10,7 @@ const Row = ({title, path, isLarge}) => {
     const fetchMovies = async (_path) => {
        try {
         const data = await getMovies(_path);
-        setMovies(data?.results)
+        setMovies(data)
 
        } catch(err) {
         console.log('error Row: ', err)

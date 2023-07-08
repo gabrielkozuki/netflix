@@ -14,9 +14,15 @@ export const categories = [
         isLarge: false,
     },
     {
-        name: "topRated",
-        title: "Populares",
-        path: "/toprated",
+        name: "topMovies",
+        title: "Populares (Filmes)",
+        path: "/topmovies",
+        isLarge: false,
+    },
+    {
+        name: "topSeries",
+        title: "Populares (Séries)",
+        path: "/topseries",
         isLarge: false,
     },
     {

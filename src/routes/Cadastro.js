@@ -12,20 +12,24 @@ function Cadastro() {
     const navigateTo = useNavigate()
 
     async function cadastrar() {
-        let user = {
-            'nome': nome,
-            'idade': idade,
-            'email': email,
-            'senha': senha
-        }
-
-        let res = await fazerCadastro(user)
-
-        if (res === 200) {
-            alert('Cadastro efetuado com sucesso!')
-            navigateTo('/login')
+        if (senha !== confirmarsenha) {
+            alert('As senhas não coincidem')
         } else {
-            alert('Erro ao cadastrar')
+            let user = {
+                'nome': nome,
+                'idade': idade,
+                'email': email,
+                'senha': senha
+            }
+    
+            let res = await fazerCadastro(user)
+    
+            if (res === 200) {
+                alert('Cadastro efetuado com sucesso!')
+                navigateTo('/login')
+            } else {
+                alert('Erro ao cadastrar')
+            }
         }
     }
 

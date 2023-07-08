@@ -12,7 +12,7 @@ function Banner() {
             )
 
             const data = await getMovies(netflixOriginalsCategory.path)
-            const movies = data?.results
+            const movies = data
             const randomIndex = Math.floor(Math.random() * movies.length)
             setMovie(movies[randomIndex])
 
@@ -44,7 +44,7 @@ function Banner() {
         >
             <div className='banner-content'>
                 <h1 className='banner-title'>
-                    { movie?.title || movie?.ñame || movie?.original_name }
+                    { movie?.title || movie?.name || movie?.original_name }
                 </h1>
                 <div className='banner-button-container'>
                     <div className='banner-button'>
